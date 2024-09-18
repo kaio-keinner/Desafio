@@ -70,10 +70,10 @@
                                 <button type="submit" class="btn btn-danger btn-sm">Apagar</button>
                             </form>
 
-                            <form action="{{ route('pedidos.update', $pedido->id) }}" method="POST"
+                            <form action="{{ route('pedidos.edit', $pedido->id) }}" method="POST"
                                 style="display: inline;">
                                 @csrf
-                                @method('PUT')
+                                @method('GET')
                                 <button type="submit" class="btn btn-warning btn-sm">Editar</button>
                             </form>
 
