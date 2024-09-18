@@ -13,7 +13,6 @@
     <div class="container mt-4">
         <h1 class="mb-4">Gerenciamento de Pedidos</h1>
 
-        <!-- Formulário de Adicionar Pedido -->
         <form action="{{ route('pedidos.store') }}" method="POST" class="row g-3">
             @csrf
             <div class="col-md-6">
@@ -41,7 +40,6 @@
             </div>
         </form>
 
-        <!-- Tabela de Pedidos -->
         <h2 class="mt-5">Lista de Pedidos</h2>
         <table class="table table-bordered mt-3">
             <thead>
@@ -70,21 +68,17 @@
                                 <button type="submit" class="btn btn-danger btn-sm">Apagar</button>
                             </form>
 
-                            <form action="{{ route('pedidos.edit', $pedido->id) }}" method="POST"
-                                style="display: inline;">
+                            <form action="{{ route('pedidos.edit', $pedido->id) }}" method="POST" style="display: inline;">
                                 @csrf
-                                @method('GET')
+                                @method('PUT')
                                 <button type="submit" class="btn btn-warning btn-sm">Editar</button>
                             </form>
-
-                            
                         </td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
     </div>
-
 </body>
 
 </html>
